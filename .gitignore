@@ -1,0 +1,6 @@
+# Personal local settings
+settings.json
+
+# Python cache files
+__pycache__/
+*.py[cod]
