@@ -14,8 +14,6 @@ Run `python quicknote.py` to add a note. On the first run, Quicknote creates `se
 
 Run `python quicknote.py --settings` at any time to change those settings.
 
-The settings file is intentionally ignored by Git because it contains a personal local path. Copy `settings.example.json` to `settings.json` if you want to configure it manually.
-
 ## Suggested Omarchy bindings
 
 Add these to `~/.config/hypr/bindings.lua`, adjusting the script path if necessary:
