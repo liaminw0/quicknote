@@ -59,27 +59,27 @@ def configure_settings(settings):
 
     while True:
         choice = run_menu([
-            "omarchy", "menu", "select", "Quicknote instellingen",
-            "Notitiemap kiezen",
-            "Datumformaat kiezen",
-            "Opslaan en sluiten",
+            "omarchy", "menu", "select", "Quicknote settings",
+            "Choose notes folder",
+            "Choose date format",
+            "Save and close",
         ])
 
-        if choice is None or choice == "Opslaan en sluiten":
+        if choice is None or choice == "Save and close":
             return settings
 
-        if choice == "Notitiemap kiezen":
+        if choice == "Choose notes folder":
             folder = run_menu([
                 "zenity", "--file-selection", "--directory",
-                "--title=Kies Quicknote-map",
+                "--title=Choose Quicknote folder",
             ])
             if folder:
                 settings["notes_path"] = folder
                 save_settings(settings)
 
-        if choice == "Datumformaat kiezen":
+        if choice == "Choose date format":
             label = run_menu([
-                "omarchy", "menu", "select", "Datumformaat",
+                "omarchy", "menu", "select", "Date format",
                 *DATE_FORMATS.keys(),
             ])
             if label:
@@ -114,12 +114,12 @@ def main():
         settings = configure_settings(settings)
 
     if not settings_are_complete(settings):
-        print("Quicknote is nog niet ingesteld.")
+        print("Quicknote has not been configured yet.")
         return
 
     notes_folder = Path(settings["notes_path"]).expanduser()
     if not notes_folder.is_dir():
-        print("De gekozen notitiemap bestaat niet.")
+        print("The selected notes folder does not exist.")
         return
 
     latest_file = find_or_create_latest_note(notes_folder, settings["date_format"])

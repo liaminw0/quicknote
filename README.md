@@ -10,7 +10,7 @@ A small Python utility for Omarchy that appends a quick note to the newest dated
 
 ## Use
 
-Run `python quicknote.py` to add a note. On the first run, Quicknote creates `settings.json` and opens its settings menu. Choose a notes folder, choose the filename date format, and select **Opslaan en sluiten**.
+Run `python quicknote.py` to add a note. On the first run, Quicknote creates `settings.json` and opens its settings menu. Choose a notes folder, choose the filename date format, and select **Save and close**.
 
 Run `python quicknote.py --settings` at any time to change those settings.
 
